@@ -3,7 +3,6 @@
 
 generator client {
     provider = "prisma-client-js"
-    previewFeatures = ["jsonProtocol"]
 }
 
 datasource db {
@@ -11,8 +10,11 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Example {
+model Playground {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    messages  String
+    functions String
+    model     String
 }
